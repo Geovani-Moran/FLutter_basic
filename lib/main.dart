@@ -101,14 +101,14 @@ class _MyHomePageState extends State<MyHomePage> { //7.6n Se uso el REFACTO/Sata
                     NavigationRailDestination(
                       icon: Icon(Icons.home),
                      label: Text('Mi hogar 🏠',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle( color: Colors.white),
                      ),
                      ),
                     NavigationRailDestination(
                       icon: Icon(Icons.favorite),
                       label: Text(
                         'Lo Mío 😶‍🌫️',
-                         style: TextStyle(fontSize: 18, color: Colors.white),  //Recuerda que se divide el codigo y el estylo en la seccion del texto separado por ,
+                         style: TextStyle( color: Colors.white),  //Recuerda que se divide el codigo y el estylo en la seccion del texto separado por ,
                         ),
                      
                     ),
@@ -179,22 +179,42 @@ class GeneratorPage extends StatelessWidget{ //Creamos un riel nuevo, solo edita
                     appState.toggleFavorte();
                   },
                   //icon: Icon(icon),
-                  label: Text('Tú Favorito 🤩',
-                  style: TextStyle(fontSize: 17) ,
-                  ),
-
-
+                  label: Text('Tú Favorito 🤩'),
+                   style: ElevatedButton.styleFrom(
+                   backgroundColor: const Color.fromARGB(255, 243, 31, 179), //Sabroso color de Rosa Hombre
+                   foregroundColor: Colors.white, //Letra color con valores.
+                   elevation: 10,  //Profunidad de sombra
+                   shape: RoundedRectangleBorder( // contorno explicito de esquinas y contorno  en el boton.
+                    borderRadius: BorderRadius.circular(1), //Capacidad de radio del borede en esquinas
+                    side: BorderSide(  //Pemite generada un contorno
+                    color: Colors.black, //color del contoeno.
+                   width: 2, //grosor del contorno.
+                    ),
+                   ),
+                   ),
                 ),
 
+                SizedBox(width:16),
 
                 ElevatedButton( //<--6.3 se agreggo la linea ROW[linesa arriba]^ y children usando REFACTOR/ROW.
                   onPressed: () {
                     appState.getNext();
                   },
-                  child: Text('¡Nex!😒',
-                  style: TextStyle(fontSize: 17),
+                  style: ElevatedButton.styleFrom(
+                    
+                   backgroundColor: const Color.fromARGB(255, 233, 35, 51), //Sabroso color de Rosa Hombre
+                   foregroundColor: Colors.white, //Letra color con valores.
+                   elevation: 10,  //Profunidad de sombra
+                   shape: RoundedRectangleBorder( // contorno explicito de esquinas y contorno  en el boton.
+                    borderRadius: BorderRadius.circular(1), //Capacidad de radio del borede en esquinas
+                    side: BorderSide(  //Pemite generada un contorno
+                    color: Colors.black, //color del contoeno.
+                   width: 2, //grosor del contorno.
+                    ),
+                   ),
                   ),
-                ),
+                  child: Text('¡Nex!😒'),
+                )
               ],
             ),
           ],
@@ -259,7 +279,7 @@ class FavoritePage extends StatelessWidget{
         Padding(
           padding:const EdgeInsets.all(25),
           child: Text('Tú tines '
-          '${appState.favorites.length} favorito, chiquistriquis 😉:',
+          '${appState.favorites.length} favorito/s, chiquistriquis 😉:',
           style: TextStyle(fontSize:20 ),
           ),
         ),
