@@ -1,0 +1,38 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+
+include: package:flutter_lints/flutter.yaml #Esta parte es un conjunto predefinido de reglas de estilo recomendadas por flutter.
+
+linter: # Esta seccion o bloque, se usa para activar o desactivar relgas especidifcas del analizador de la linea de arriba.
+
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  
+  rules: #Normas de preferencias.
+    prefer_const_constructors: false #Obliga a usa CONST si se puede, para optimizar widgets X.
+    prefer_final_fields: false # Se sugire usar FINAL, si no se va cambiar el valor de una variable x.
+    use_key_in_widget_constructors: false # Obliga a poner KEY en los contructores de widgets personalizados x.
+    prefer_const_literals_to_create_immutables: false # Sujerencia de usar CONST[] O CONS {} en listas mutables x.
+    prefer_const_constructors_in_immutables: false #Pide usar CONST en constructores de clases inmutables x.
+    avoid_print: false # Desactiva advertencias por usar PRINT() x.
+  
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
